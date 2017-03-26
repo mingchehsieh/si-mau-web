@@ -7,7 +7,7 @@ return [
     'product' => 'Product',
     'about' => 'About the company',
     'contact_us' => 'Contact us',
-    'domestic_calls' => 'For Domestic Calls'
+    'domestic_calls' => 'For Domestic Calls',
     'international_calls' => 'For International Calls',
     'search' => 'Search',
 
@@ -20,10 +20,5 @@ return [
     'closed' => 'Closed：Sat・Sun・Public Holiday',
 
     'related_companies' => 'Related Companies',
-    'contact_now' => '立即詢價',
-    'contact_name' => '姓名',
-    'contact_tel' => '聯絡電話',
-    'contact_email' => '聯絡信箱',
-    'contact_product' => '詢價產品',
-    'contact_content' => '詢價內容',
+
 ];

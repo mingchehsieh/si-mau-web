@@ -7,7 +7,7 @@ return [
     'product' => '产品介绍',
     'about' => '公司介绍',
     'contact_us' => '谘询我们',
-    'domestic_calls' => '国内'
+    'domestic_calls' => '国内',
     'international_calls' => '国外',
     'search' => '搜寻',
 
