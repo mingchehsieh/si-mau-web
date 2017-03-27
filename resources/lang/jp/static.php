@@ -20,10 +20,4 @@ return [
     'closed' => '定休日：土日・台湾の祝日',
 
     'related_companies' => '関連会社',
-    'contact_now' => '立即詢價',
-    'contact_name' => '姓名',
-    'contact_tel' => '聯絡電話',
-    'contact_email' => '聯絡信箱',
-    'contact_product' => '詢價產品',
-    'contact_content' => '詢價內容',
 ];
