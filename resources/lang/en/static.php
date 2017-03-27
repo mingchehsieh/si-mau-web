@@ -2,6 +2,7 @@
 
 return [
 
+    'lang' => 'en',
     'home' => 'Home',
     'news' => 'Information',
     'product' => 'Product',

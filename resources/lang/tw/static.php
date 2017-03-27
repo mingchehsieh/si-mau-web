@@ -2,6 +2,7 @@
 
 return [
 
+    'lang' => 'zh-TW',
     'home' => '首頁',
     'news' => '最新消息',
     'product' => '產品介紹',

@@ -2,6 +2,7 @@
 
 return [
 
+    'lang' => 'ja',
     'home' => 'ホンムページ',
     'news' => '最新ニュース',
     'product' => '商品紹介',
