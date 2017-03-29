@@ -3,7 +3,7 @@
 return [
 
     'lang' => 'en',
-    'header_tel' => '02-8787-7939 +886-2-8787-7939'
+    'header_tel' => '02-8787-7939 +886-2-8787-7939',
     'home' => 'Home',
     'news' => 'Information',
     'product' => 'Product',
