@@ -13,6 +13,7 @@ return [
     'international_calls' => 'For International Calls',
     'search' => 'Search',
 
+    'address_header' => 'Address',
     'address' => 'add.：4F., No.168, Yongji Rd., Xinyi Dist., Taipei City 11066, Taiwan (R.O.C.)',
     'station' => 'station：Taipei city hall station、Yongchun station',
     'tel' => 'TEL：02-8787-7939　　+886-2-8787-7939',

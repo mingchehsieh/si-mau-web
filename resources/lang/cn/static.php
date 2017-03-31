@@ -13,6 +13,7 @@ return [
     'international_calls' => '国外',
     'search' => '搜寻',
 
+    'address_header' => '地址',
     'address' => '地址：台北市信义区永吉路168号4楼',
     'station' => '地下铁：市政府站、永春站',
     'tel' => '联络电话：【国内】02-8787-7939　【国外】+886-2-8787-7939',
