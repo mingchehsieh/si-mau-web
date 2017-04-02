@@ -21,7 +21,7 @@ return [
     'open' => '服務時間：9：00～18：00',
     'closed' => '公休日：週六、日及國定假日',
 
-    'related_companies' => '相關公司',
+    'related_companies' => '相關企業',
     'contact_now' => '立即詢價',
     'contact_name' => '姓名',
     'contact_tel' => '聯絡電話',
