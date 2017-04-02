@@ -8,112 +8,113 @@
         <title>世茂科技股份有限公司 - @yield('title')</title>
         <link rel="stylesheet" href="css/app.css">
         <style>
-            body {
-                padding-top: 120px;
-                background: #FFF;
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-            li {
-                float: left;
-            }
+            @section('style')
+                body {
+                    padding-top: 120px;
+                    background: #FFF;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                }
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                }
+                li {
+                    float: left;
+                }
 
-            header {
-                height: 50px;
-                background: #434343;
-                line-height: 50px;
-                padding: 0 30px;
-            }
-            header>div {
-                max-width: 1100px;
-                margin: 0 auto;
-                font-size: 13px;
-                color: #FFF;
-                overflow: auto;
-                zoom: 1;
-            }
-            .lang li {
-                padding-left: 24px;
-            }
-            .lang li a {
-                display: block;
-                color: white;
-                text-decoration: none;
-            }
-            nav {
-                height: 70px;
-                background: #FFF;
-                line-height: 70px;
-                padding: 0 30px;
-            }
-            nav>div {
-                max-width: 1100px;
-                margin: 0 auto;
-                overflow: auto;
-                zoom: 1;
-            }
-            .menu li a {
-                display: block;
-                color: black;
-                text-align: center;
-                padding: 0 26px;
-                text-decoration: none;
-            }
-            .search-input {
-                height: 20px;
-                width: 125px;
-                margin: auto 7px auto 26px;
-                padding: 0 7px;
-                border: 1px solid gray;
-                border-radius: 10px;
-                line-height: 20px;
-            }
-            .header-fixed {
-                width: 100%;
-                position: fixed;
-                top: 0;
-                z-index: 9999;
-            }
-            .float-left {
-                float:left;
-            }
-            .float-right {
-                float:right;
-            }
-            footer {
-                padding: 30px;
-            }
-            footer>div {
-                max-width: 1100px;
-                margin: 0 auto;
-                padding-left: 40px;
-                font-size: 13px;
-                color: #666;
-                overflow: auto;
-                zoom: 1;
-            }
-            footer>div div {
-                padding-left: 84px;
-            }
-            .content {
-                background-color: #E5E5E5;
-            }
-            .copyright {
-                padding-top: 60px;
-                text-align: right;
-            }
+                .child-fixed-width-1100 {
+                    padding: 0 30px;
+                }
+                .child-fixed-width-1100>div {
+                    max-width: 1100px;
+                    margin: 0 auto;
+                }
+                header {
+                    height: 50px;
+                    background: #434343;
+                    line-height: 50px;
+                }
+                header>div {
+                    font-size: 13px;
+                    color: #FFF;
+                    overflow: auto;
+                    zoom: 1;
+                }
+                .lang li {
+                    padding-left: 24px;
+                }
+                .lang li a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                }
+                nav {
+                    height: 70px;
+                    background: #FFF;
+                    line-height: 70px;
+                }
+                nav>div {
+                    overflow: auto;
+                    zoom: 1;
+                }
+                .menu li a {
+                    display: block;
+                    color: black;
+                    text-align: center;
+                    padding: 0 26px;
+                    text-decoration: none;
+                }
+                .search-input {
+                    height: 20px;
+                    width: 125px;
+                    margin: auto 7px auto 26px;
+                    padding: 0 7px;
+                    border: 1px solid gray;
+                    border-radius: 10px;
+                    line-height: 20px;
+                }
+                .header-fixed {
+                    width: 100%;
+                    position: fixed;
+                    top: 0;
+                    z-index: 9999;
+                }
+                .float-left {
+                    float:left;
+                }
+                .float-right {
+                    float:right;
+                }
+                footer {
+                    padding: 30px;
+                }
+                footer>div {
+                    padding-left: 40px;
+                    font-size: 13px;
+                    color: #666;
+                    overflow: auto;
+                    zoom: 1;
+                }
+                footer>div div {
+                    padding-left: 84px;
+                }
+                .content {
+                    background-color: #E5E5E5;
+                }
+                .copyright {
+                    padding-top: 60px;
+                    text-align: right;
+                }
+            @show
         </style>
 
 </head>
 <body>
     <div class="header-fixed">
-        <header>
+        <header class="child-fixed-width-1100">
             <div>
                 <span class="float-left">
                     {{ __('static.header_tel') }}
@@ -128,7 +129,7 @@
                 </span>
             </div>
         </header>
-        <nav>
+        <nav class="child-fixed-width-1100">
             <div>
                 <span class="float-left">
                     <img src="images/logo.gif">
@@ -146,13 +147,12 @@
                     </ul>
                 </span>
             </div>
-
         </nav>
     </div>
     <div class="content">
         @yield('content')
     </div>
-    <footer>
+    <footer class="child-fixed-width-1100">
         <div>
             <div class="float-left">
                 <h4>{{ __('static.address_header') }}</h4>
