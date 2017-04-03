@@ -2,15 +2,16 @@
 
 @section('title', __('static.home'))
 
-@section('content')
-<style>
+@section('style')
+    @parent
+
     .test {
         background: #FFF url(images/product-default2.jpg) center;
         width:226px;
         height:226px;
         margin:0 11px;
     }
-    .test>div {
+    .test div {
         width:100%;
         height:100%;
         background: rgba(0,167,193,0.44);
@@ -18,15 +19,17 @@
     .test:hover {
         background-size: 110%;
     }
-    .test>div:hover {
+    .test div:hover {
         background: transparent;
     }
-</style>
+@endsection
+
+@section('content')
     <div style="height: 580px; background: url('images/slide1.jpg') no-repeat top; padding-top: 309px">
         <ul style="width: 744px;margin:0 auto">
-            <li><div class="test"><div></div></div></li>
-            <li><div class="test"><div></div></div></li>
-            <li><div class="test"><div></div></div></li>
+            <li class="test"><a href="a.htm"><div>中文測試</div></a></li>
+            <li class="test"><div><a href="a.htm">中文測試</a></div></li>
+            <li class="test"><div><a href="a.htm">中文測試</a></div></li>
         </ul>
     </div>
     <div class="child-fixed-width-1100">
