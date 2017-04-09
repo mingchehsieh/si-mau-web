@@ -167,7 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-	Dimsav\Translatable\TranslatableServiceProvider::class,
+        Dimsav\Translatable\TranslatableServiceProvider::class,
         /*
          * Application Service Providers...
          */

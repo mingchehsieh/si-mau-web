@@ -1,47 +1,17 @@
-@extends('layouts.front')
-
-@section('title', __('static.home'))
-
-@section('style')
-    @parent
-
-    .test {
-        background: #FFF url(images/product-default2.jpg) center;
-        width:226px;
-        height:226px;
-        margin:0 11px;
-    }
-    .test div {
-        width:100%;
-        height:100%;
-        background: rgba(0,167,193,0.44);
-    }
-    .test:hover {
-        background-size: 110%;
-    }
-    .test div:hover {
-        background: transparent;
-    }
-@endsection
+@extends('layouts.app')
 
 @section('content')
-    <div style="height: 580px; background: url('images/slide1.jpg') no-repeat top; padding-top: 309px">
-        <ul style="width: 744px;margin:0 auto">
-            <li class="test"><a href="a.htm"><div>中文測試</div></a></li>
-            <li class="test"><div><a href="a.htm">中文測試</a></div></li>
-            <li class="test"><div><a href="a.htm">中文測試</a></div></li>
-        </ul>
-    </div>
-    <div class="child-fixed-width-1100">
-        <div>
-            <h4>{{ __('static.related_companies') }}</h4>
-            <ul>
-                <li><img src="a.gif" style="width:149px; height:155px"></li>
-                <li><img src="a.gif" style="width:149px; height:155px"></li>
-                <li><img src="a.gif" style="width:149px; height:155px"></li>
-                <li><img src="a.gif" style="width:149px; height:155px"></li>
-                <li><img src="a.gif" style="width:149px; height:155px"></li>
-            </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
+
+                <div class="panel-body">
+                    You are logged in!
+                </div>
+            </div>
         </div>
     </div>
+</div>
 @endsection

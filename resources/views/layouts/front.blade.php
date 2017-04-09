@@ -7,6 +7,7 @@
 
         <title>世茂科技股份有限公司 - @yield('title')</title>
         <link rel="stylesheet" href="css/app.css">
+        <script src="/js/app.js"></script>
         <style>
             @section('style')
                 body {
@@ -28,7 +29,7 @@
                 .child-fixed-width-1100 {
                     padding: 0 30px;
                 }
-                .child-fixed-width-1100>div {
+                .child-fixed-width-1100>div, .fixed-width-1100 {
                     max-width: 1100px;
                     margin: 0 auto;
                 }
@@ -89,6 +90,7 @@
                     float:right;
                 }
                 footer {
+                    margin-top: 18px;
                     padding: 30px;
                 }
                 footer>div {
@@ -103,6 +105,8 @@
                 }
                 .content {
                     background-color: #E5E5E5;
+                    overflow: auto;
+                    zoom: 1;
                 }
                 .copyright {
                     padding-top: 60px;
@@ -113,7 +117,32 @@
 
 </head>
 <body>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+<!-- Modal -->
+
+
     <div class="header-fixed">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
         <header class="child-fixed-width-1100">
             <div>
                 <span class="float-left">
@@ -132,14 +161,14 @@
         <nav class="child-fixed-width-1100">
             <div>
                 <span class="float-left">
-                    <img src="images/logo.gif">
+                    <a href="/"><img src="images/logo.gif" alt="Ximos Logo"></a>
                 </span>
                 <span class="float-right">
                     <ul class="menu">
-                        <li><a>{{ __('static.news') }}</a></li>
-                        <li><a>{{ __('static.product') }}</a></li>
-                        <li><a>{{ __('static.about') }}</a></li>
-                        <li><a>{{ __('static.contact_us') }}</a></li>
+                        <li><a href="/news">{{ __('static.news') }}</a></li>
+                        <li><a href="/product">{{ __('static.product') }}</a></li>
+                        <li><a href="/about">{{ __('static.about') }}</a></li>
+                        <li><a href="/contact">{{ __('static.contact_us') }}</a></li>
                         <li>
                             <input class="search-input" type="text" placeholder="{{ __('static.search') }}">
                             <img alt="" src="images/search.png">
