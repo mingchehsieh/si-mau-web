@@ -10,9 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\News;
-Route::get('admin', ['middleware' => 'auth.basic', function() {
 
+use App\News;
+
+Route::get('admin', ['middleware' => 'auth.basic', function() {
+       if (Auth::check()) {
+    return 'a';
+    }
+    return "b";
 }]);
 Route::get('aa',function(){
        if (Auth::check()) {
