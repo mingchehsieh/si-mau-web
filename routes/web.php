@@ -13,20 +13,7 @@
 
 use App\News;
 
-Route::get('admin', ['middleware' => 'auth.basic', function() {
-       if (Auth::check()) {
-    return 'a';
-    }
-    return "b";
-}]);
-Route::get('aa',function(){
-    Auth::Logout();
-       if (Auth::check()) {
-    return 'a';
-    }
-    return "b";
 
-});
 Route::get('/', function () {
     return view('home');
 });
@@ -51,17 +38,9 @@ Route::get('contact', function () {
 Route::get('about', function () {
     return view('about');
 });
+
 Route::get('/lang/set/{lang}', 'LocaleController@setLang');
 
-Route::get('config', function () {
-    return view('back.news');
-});
-Route::get('config/news/add', function () {
-    return view('back.news-add');
-});
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 
