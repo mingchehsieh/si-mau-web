@@ -20,6 +20,7 @@ Route::get('admin', ['middleware' => 'auth.basic', function() {
     return "b";
 }]);
 Route::get('aa',function(){
+    Auth::Logout();
        if (Auth::check()) {
     return 'a';
     }
