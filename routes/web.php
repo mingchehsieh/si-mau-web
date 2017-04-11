@@ -16,11 +16,11 @@ use App\Category;
 use Illuminate\Http\Request;
 
 Route::get('loginadmin', function () {
-    return back();
+    return view('home', ['categories' => Category::all()]);
 })->middleware('auth.basic');
 Route::get('logout', function () {
     Auth::logout();
-    return back();
+    return view('home', ['categories' => Category::all()]);
 });
 Route::post('addcategory', function (Request $request) {
    if ($request->homecol != 0) {
