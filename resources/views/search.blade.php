@@ -68,7 +68,7 @@
 @section('content')
     <div class="fixed-width-1100">
         <h3 class="product-header">
-            {{ __('static.product') }} ＞ 搜尋：{{ $key }}
+            {{ __('static.product') }} ＞ __('static.search')：{{ $key }}
         </h3>
         <div class="products">
             @foreach($products as $product)
