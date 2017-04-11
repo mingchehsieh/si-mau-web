@@ -113,7 +113,7 @@
                                     <span class="input-group-addon">
                                         <input type="checkbox" name="adden"> 英文
                                     </span>
-                                    <input type="text" class="form-control" name="enproducttitle">
+                                    <input type="text" class="form-control" name="enproductname">
                                 </div>
                             </div>
                             <div class="form-group">
