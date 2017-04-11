@@ -31,7 +31,12 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="product-header">{{ __('static.product') }} ＞ 稀土金屬</h3>
+        <h3 class="product-header">
+            {{ __('static.product') }}＞{{ $category->{'name:'.App::getLocale()} }}
+            @if (Auth::check())
+                <button type="button" class="id-button-p" data-toggle="modal" data-target="#categoryModal" data-action="新增" data-col="0" data-id="0">新增</button>
+            @endif
+        </h3>
         <div class="products">
             <div class="product text-center">
                 <a href="aa">

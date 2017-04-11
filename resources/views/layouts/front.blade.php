@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>世茂科技股份有限公司 - @yield('title')</title>
-        <link rel="stylesheet" href="css/app.css">
-        <script src="/js/app.js"></script>
+        <link rel="stylesheet" href="/css/app.css">
         <style>
             @section('style')
                 body {
@@ -35,7 +34,8 @@
                 }
                 header {
                     height: 50px;
-                    background: #434343;
+                    /* background: #434343; */
+                    background: rgba(20, 20, 20, 0.8);
                     line-height: 50px;
                 }
                 header>div {
@@ -54,7 +54,8 @@
                 }
                 nav {
                     height: 70px;
-                    background: #FFF;
+                    /* background: #FFF; */
+                    background: rgba(255, 255, 255, 0.8);
                     line-height: 70px;
                 }
                 nav>div {
@@ -81,7 +82,7 @@
                     width: 100%;
                     position: fixed;
                     top: 0;
-                    z-index: 9999;
+                    z-index: 5;
                 }
                 .float-left {
                     float:left;
@@ -112,37 +113,56 @@
                     padding-top: 60px;
                     text-align: right;
                 }
+                .id-button-p,
+                .id-button-d,
+                .id-button-w {
+                    display: inline-block;
+                    border: 0;
+                    padding: 0 50px;
+                    width: auto;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 17px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                .id-button-p:hover,
+                .id-button-p:hover,
+                .id-button-p:hover {
+                    text-decoration: none;
+                }
+                .id-button-p {
+                    background: #00A7C1;
+                    color: #FFF;
+                }
+                .id-button-p:hover {
+                    background: #008299;
+                    color: #FFF;
+                }
+                .id-button-w {
+                    border: 1px solid #ADADAD;
+                    background: #FFF;
+                    color: #000;
+                }
+                .id-button-w:hover {
+                    border: 1px solid #ADADAD;
+                    background: #E6E6E6;
+                    color: #000;
+                }
+                .id-button-d {
+                    background: #D9534F;
+                    color: #FFF;
+                }
+                .id-button-d:hover {
+                    background: #C9302C;
+                    color: #FFF;
+                }
             @show
         </style>
-
 </head>
 <body>
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-<!-- Modal -->
-
-
+    @yield('modal')
     <div class="header-fixed">
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
         <header class="child-fixed-width-1100">
             <div>
                 <span class="float-left">
@@ -161,7 +181,7 @@
         <nav class="child-fixed-width-1100">
             <div>
                 <span class="float-left">
-                    <a href="/"><img src="images/logo.gif" alt="Ximos Logo"></a>
+                    <a href="/"><img src="/images/logo.png" alt="Ximos Logo"></a>
                 </span>
                 <span class="float-right">
                     <ul class="menu">
@@ -171,7 +191,7 @@
                         <li><a href="/contact">{{ __('static.contact_us') }}</a></li>
                         <li>
                             <input class="search-input" type="text" placeholder="{{ __('static.search') }}">
-                            <img alt="" src="images/search.png">
+                            <img alt="" src="/images/search.png">
                         </li>
                     </ul>
                 </span>
@@ -199,5 +219,6 @@
         </div>
         <div class="copyright">© 2017 世茂科技股份有限公司 All Rights Reserved.</div>
     </footer>
+    @yield('js')
 </body>
 </html>

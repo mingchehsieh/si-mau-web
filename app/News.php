@@ -7,6 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     use \Dimsav\Translatable\Translatable;
-    public $translatedAttributes = ['title', 'text'];
-    protected $fillable = ['image'];
+    public $translatedAttributes = ['title', 'text', 'image'];
 }

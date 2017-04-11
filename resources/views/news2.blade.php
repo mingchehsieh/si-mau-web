@@ -35,18 +35,105 @@
 
 @endsection
 
+@if (Auth::check())
+    @section('js')
+        <script src="/js/app.js"></script>
+        <script>
+            $('.deletecate').on('click', function () {
+                if (confirm('確認刪除' + $(this).data('name') + '？'))
+                    window.location = '/rmnews/' + $(this).data('id')
+            })
+        </script>
+    @endsection
+
+    @section('modal')
+        <div class="modal fade" id="newsModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title" id="newsModalLabel">修改最新消息</h4>
+                    </div>
+                    <form method="POST" action="/addnews" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="newstitle" class="control-label">標題：</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">繁中</span>
+                                    <input type="text" class="form-control" id="newstitle" name="newstitle" value="{{ $news->{'title:zh-TW'} }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="newstext" class="control-label">內容：</label>
+                                <textarea class="form-control" rows="3" id="newstext" name="newstext">{{ $news->{'text:zh-TW'} }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox" name="addzhcn"{{ $news->hasTranslation('zh-CN') ? ' checked' : '' }}> 簡中
+                                    </span>
+                                    <input type="text" class="form-control" name="zhcnnewstitle" value="{{ $news->hasTranslation('zh-CN') ? $news->{'title:zh-CN'} : '' }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" name="zhcnnewstext">{{ $news->hasTranslation('zh-CN') ? $news->{'text:zh-CN'} : '' }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox" name="addja"{{ $news->hasTranslation('ja') ? ' checked' : '' }}> 日文
+                                    </span>
+                                    <input type="text" class="form-control" name="janewstitle" value="{{ $news->hasTranslation('ja') ? $news->{'title:ja'} : '' }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" name="janewstext">{{ $news->hasTranslation('ja') ? $news->{'text:ja'} : '' }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <input type="checkbox" name="adden"{{ $news->hasTranslation('en') ? ' checked' : '' }}> 英文
+                                    </span>
+                                    <input type="text" class="form-control" name="ennewstitle" value="{{ $news->hasTranslation('en') ? $news->{'title:en'} : '' }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" name="ennewstext">{{ $news->hasTranslation('en') ? $news->{'text:en'} : '' }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="uploadimage" class="control-label">上傳圖片：</label>
+                                <input type="file" class="form-control" id="uploadimage" name="uploadimage">
+                            </div>
+                            <input type="hidden" name="id" value="{{ $news->id }}">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="取消">
+                            <input type="submit" class="btn btn-primary" value="送出">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endsection
+@endif
+
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="news-header">{{ __('static.news') }}＞主題</h3>
+        <h3 class="news-header">
+            {{ __('static.news') }}
+            @if (Auth::check())
+                <button type="button" class="id-button-p" data-toggle="modal" data-target="#newsModal">修改</button>
+                <button type="button" class="id-button-d deletecate"  data-id="{{ $news->id }}" data-name="{{ $news->{'title:zh-TW'} }}">刪除</button>
+            @endif
+        </h3>
         <div class="news-content">
-            <h2>最新消息主題</h2>
-            <time>November 29, 2015</time>
+            <h2>{{ $news->{'title:'.App::getLocale()} }}</h2>
+            <time>{{ $news->updated_at->format('F j, Y') }}</time>
             <p>
-                世茂科技（XIMOS）從電子零件（Schotkky Barrier Diode）開始做起，歷經了六七年的市場開發經驗，不斷的修正。直到今日朝著物流通路開發的路線前進，銷售地區以台灣、日本、韓國、中國大陸及越南為主。我們抱持著熱誠去經營著我們的商品與市場。
-                我希望 XIMOS 對外所有的客戶及合作廠商皆是可以信任的對象。我們永遠都抱持著能長久合作的心態去對待每一個機會。即使當下沒有合作機會，多一個朋友便多一份力。我們遍佈全球的合作對象說不定也有是您尋找的廠商也不一定？
-                對員工來說，我不希望 XIMOS 只是一間公司，更希望它像一個家。希望員工們能把彼
+                {!! nl2br($news->{'text:'.App::getLocale()}) !!}
             </p>
-            <img src="/images/pdf-icon.png">
+            <img src="{{ empty($news->{'image:zh-TW'})? '/images/news-default.png' : '/storage/'.$news->{'image:zh-TW'} }}">
         </div>
     </div>
 

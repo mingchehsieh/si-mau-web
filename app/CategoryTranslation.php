@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsTranslation extends Model
+class CategoryTranslation extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['title', 'text', 'image'];
+    protected $fillable = ['name', 'image'];
 }

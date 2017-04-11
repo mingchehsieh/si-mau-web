@@ -22,16 +22,16 @@ class CreateProductsTable extends Migration
         Schema::create('product_translations', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('products_id')->unsigned();
+            $table->integer('product_id')->unsigned();
             $table->string('name');
             $table->text('text');
-            $table->string('image');
-            $table->string('pdf');
-            $table->string('email');
+            $table->string('image')->nullable();
+            $table->string('pdf')->nullable();
+            $table->string('email')->nullable();
             $table->string('locale')->index();
 
-            $table->unique(['products_id','locale']);
-            $table->foreign('products_id')->references('id')->on('products')->onDelete('cascade');
+            $table->unique(['product_id','locale']);
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

@@ -22,13 +22,13 @@ class CreateCategoriesTable extends Migration
         Schema::create('category_translations', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->integer('categories_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('locale')->index();
 
-            $table->unique(['categories_id','locale']);
-            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unique(['category_id','locale']);
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
