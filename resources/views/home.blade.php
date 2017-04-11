@@ -88,9 +88,9 @@
 @section('content')
     <div class="banner">
         <ul class="product-category">
-            <li class="category1"><a href="/product/{{ $categories->where('home_col', 1)->first()->id }}"><div><span class="top-line">{{ $categories->where('home_col', 1)->first()->{'name:'.App::getLocale()} }}</span></div></a></li>
-            <li class="category2"><a href="/product/{{ $categories->where('home_col', 2)->first()->id }}"><div><span class="top-line">{{ $categories->where('home_col', 2)->first()->{'name:'.App::getLocale()} }}</span></div></a></li>
-            <li class="category3"><a href="/product/{{ $categories->where('home_col', 3)->first()->id }}"><div><span class="top-line">{{ $categories->where('home_col', 3)->first()->{'name:'.App::getLocale()} }}</span></div></a></li>
+            <li class="category1"><a href="/product/{{ $categories->where('home_col', 1)->first()->id }}"><div><span class="top-line">{{ $categories->where('home_col', 1)->first()->{'name:'.App::getLocale()} or '' }}</span></div></a></li>
+            <li class="category2"><a href="/product/{{ $categories->where('home_col', 2)->first()->id }}"><div><span class="top-line">{{ $categories->where('home_col', 2)->first()->{'name:'.App::getLocale()} or '' }}</span></div></a></li>
+            <li class="category3"><a href="/product/{{ $categories->where('home_col', 3)->first()->id }}"><div><span class="top-line">{{ $categories->where('home_col', 3)->first()->{'name:'.App::getLocale()} or '' }}</span></div></a></li>
         </ul>
     </div>
     <div class="child-fixed-width-1100">
