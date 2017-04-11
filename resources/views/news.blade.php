@@ -45,7 +45,7 @@
                 var action = button.data('action')
                 var id = button.data('id')
                 var modal = $(this)
-                modal.find('.modal-title').text(action + '類別')
+                modal.find('.modal-title').text(action + '最新消息')
                 modal.find('.modal-body input[type=hidden]').val(id)
             })
             $('.deletecate').on('click', function () {
@@ -70,12 +70,12 @@
                                 <label for="newstitle" class="control-label">標題：</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">繁中</span>
-                                    <input type="text" class="form-control" id="newstitle" name="newstitle">
+                                    <input type="text" class="form-control" id="newstitle" name="newstitle" Required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="newstext" class="control-label">內容：</label>
-                                <textarea class="form-control" rows="3" id="newstext" name="newstext"></textarea>
+                                <textarea class="form-control" rows="3" id="newstext" name="newstext" Required></textarea>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">

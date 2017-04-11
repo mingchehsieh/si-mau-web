@@ -157,6 +157,12 @@
                     background: #C9302C;
                     color: #FFF;
                 }
+                .searchbtn {
+                    border: 0;
+                    margin: 0;
+                    padding: 0;
+                    background: transparent;
+                }
             @show
         </style>
 </head>
@@ -190,8 +196,10 @@
                         <li><a href="/about">{{ __('static.about') }}</a></li>
                         <li><a href="/contact">{{ __('static.contact_us') }}</a></li>
                         <li>
-                            <input class="search-input" type="text" placeholder="{{ __('static.search') }}">
-                            <img alt="" src="/images/search.png">
+                            <form method="GET" action="/search">
+                                <input class="search-input" type="text" name="key" placeholder="{{ __('static.search') }}">
+                                <button type="submit" class="searchbtn"><img alt="search" src="/images/search.png"></button>
+                            </form>
                         </li>
                     </ul>
                 </span>

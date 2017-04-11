@@ -61,12 +61,12 @@
                                 <label for="newstitle" class="control-label">標題：</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">繁中</span>
-                                    <input type="text" class="form-control" id="newstitle" name="newstitle" value="{{ $news->{'title:zh-TW'} }}">
+                                    <input type="text" class="form-control" id="newstitle" name="newstitle" value="{{ $news->{'title:zh-TW'} }}" Required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="newstext" class="control-label">內容：</label>
-                                <textarea class="form-control" rows="3" id="newstext" name="newstext">{{ $news->{'text:zh-TW'} }}</textarea>
+                                <textarea class="form-control" rows="3" id="newstext" name="newstext" Required>{{ $news->{'text:zh-TW'} }}</textarea>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">

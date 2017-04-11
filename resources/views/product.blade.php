@@ -117,7 +117,7 @@
                                 <label for="categoryname" class="control-label">類別名稱：</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">繁中</span>
-                                    <input type="text" class="form-control" id="categoryname" name="categoryname">
+                                    <input type="text" class="form-control" id="categoryname" name="categoryname" Required>
                                 </div>
                             </div>
                             <div class="form-group">

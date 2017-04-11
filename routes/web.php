@@ -13,14 +13,19 @@
 
 use App\News;
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 
+Route::get('search', function (Request $request) {
+    return view('search', ['products' => Product::whereTranslationLike('name', '%'.$request->key.'%')->get(), 'key' => $request->key]);
+});
+
 Route::get('loginadmin', function () {
-    return view('home', ['categories' => Category::all()]);
+    return redirect('/');
 })->middleware('auth.basic');
 Route::get('logout', function () {
     Auth::logout();
-    return view('home', ['categories' => Category::all()]);
+    return redirect('/');
 });
 Route::post('addcategory', function (Request $request) {
    if ($request->homecol != 0) {
@@ -57,9 +62,10 @@ Route::post('addcategory', function (Request $request) {
 Route::get('rmcategory/{id}', function ($id) {
     if (Auth::check()) {
         App\Category::destroy($id);
+        return redirect('product');
+    } else {
         return back();
     }
-    return back();
 });
 Route::post('addnews', function (Request $request) {
     if ($request->id == 0) {
@@ -92,11 +98,59 @@ Route::post('addnews', function (Request $request) {
 Route::get('rmnews/{id}', function ($id) {
     if (Auth::check()) {
         App\News::destroy($id);
-        return view('news', ['newsall' => News::all()]);
+        return redirect('news');
+    } else {
+        return back();
     }
+});
+Route::post('addproduct', function (Request $request) {
+    if ($request->id == 0) {
+        $product = new Product;
+    } else {
+        $product = Product::find($request->id);
+    }
+    $product->category_id = $request->cid;
+    $product->{'name:zh-TW'} = $request->productname;
+    $product->{'text:zh-TW'} = $request->producttext;
+    if (empty($request->email)) {
+        $product->{'email:zh-TW'} = 'info@ximos.net';
+    } else {
+        $product->{'email:zh-TW'} = $request->email;
+    }
+
+    if (!empty($request->addzhcn)) {
+        $product->{'name:zh-CN'} = $request->zhcnproductname;
+        $product->{'text:zh-CN'} = $request->zhcnproducttext;
+    }
+    if (!empty($request->addja)) {
+        $product->{'name:ja'} = $request->japroductname;
+        $product->{'text:ja'} = $request->japroducttext;
+    }
+    if (!empty($request->adden)) {
+        $product->{'name:en'} = $request->enproductname;
+        $product->{'text:en'} = $request->enproducttext;
+    }
+    if ($request->hasFile('uploadpdf')) {
+        $filename = $request->uploadpdf->store('/');
+        $product->{'pdf:zh-TW'} = $filename;
+    }
+    if ($request->hasFile('uploadimage')) {
+        $filename = $request->uploadimage->store('/');
+        $product->{'image:zh-TW'} = $filename;
+    }
+    $product->save();
     return back();
 });
+Route::get('rmproduct/{id}', function ($id) {
+    if (Auth::check()) {
+        $cid = App\Product::find($id)->category_id;
+        App\Product::destroy($id);
+        return redirect('product/'.$cid);
+    } else {
+        return back();
+    }
 
+});
 Route::get('/', function () {
     return view('home', ['categories' => Category::all()]);
 });
@@ -110,13 +164,18 @@ Route::get('product', function () {
     return view('product', ['categories' => Category::all()]);
 });
 Route::get('product/{cid}', function ($cid) {
-    return view('product2', ['category' => Category::find($cid)]);
+    return view('product2', ['category' => Category::find($cid), 'products' => Product::where('category_id', $cid)->get()]);
 });
-Route::get('product3', function () {
-    return view('product3');
+Route::get('product/{cid}/{id}', function ($cid, $id) {
+    return view('product3', ['category' => Category::find($cid), 'product' => Product::find($id)]);
 });
-Route::get('contact', function () {
-    return view('contact');
+
+Route::get('contact/{pid?}/{email?}', function ($pid = null, $email = 'info@ximos.net') {
+    $productname = '';
+    if ($pid !== null) {
+        $productname = Product::find($pid)->{'name:'.App::getLocale()};
+    }
+    return view('contact', ['productname' => $productname, 'email' => $email]);
 });
 Route::get('about', function () {
     return view('about');

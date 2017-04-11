@@ -39,18 +39,9 @@
         padding: 12px 32px;
     }
     .form input[type=submit] {
-        display: block;
-        width: 120px;
-        height: 60px;
-        border: 0;
-        background: #00A7C1;
-        color: #FFF;
-        margin-left: 180px;
-        font-size: 18px;
+        margin-left: 165px;
     }
-    .form input[type=submit]:hover {
-        background: #008299;
-    }
+
 @endsection
 
 @section('content')
@@ -58,12 +49,12 @@
         <h3 class="contact-header">{{ __('static.contact_us') }}</h3>
         <div class="form">
             <form>
-                <input type="text" name="name" placeholder="{{ __('static.contact_name') }}">
+                <input type="text" name="name" placeholder="{{ __('static.contact_name') }}" Required>
                 <input type="text" name="tel" placeholder="{{ __('static.contact_tel') }}">
-                <input type="text" name="email" placeholder="{{ __('static.contact_email') }}">
-                <input type="text" name="product" placeholder="{{ __('static.contact_product') }}">
+                <input type="text" name="email" placeholder="{{ __('static.contact_email') }}" Required>
+                <input type="text" name="product" placeholder="{{ __('static.contact_product') }}" value="{{ $productname }}">
                 <textarea name="content" placeholder="{{ __('static.contact_content') }}"></textarea>
-                <input type="submit" name="submit" value="發 送">
+                <input type="submit" name="submit" class="id-button-p" value="發送">
             </form>
 
         </div>
