@@ -93,6 +93,11 @@
                 }
                 modal.find('.modal-body input[type=hidden]').val(id)
                 modal.find('.modal-body input[value=' + col + ']').prop('checked', true)
+                if (col != 0) {
+                    modal.find('.modal-body input[type=radio]').prop('disabled', true)
+                } else {
+                    modal.find('.modal-body input[type=radio]').prop('disabled', false)
+                }
 
             })
             $('.deletecate').on('click', function () {
