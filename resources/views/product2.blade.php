@@ -4,12 +4,6 @@
 
 @section('style')
     @parent
-    a {
-        color: #00A7C1;
-    }
-    a:hover {
-        color: #008299;
-    }
     .product-header {
         font-size: 20px;
         margin: 28px auto;
@@ -21,6 +15,7 @@
     }
     .product {
         width: 236px;
+        height: 236px;
         margin: 0 12px 20px 12px;
         float: left;
     }
@@ -32,13 +27,13 @@
     }
     @foreach ($products as $product)
         .div{{ $product->id }} {
-            background: url({{ empty($product->{'image:zh-TW'}) ? '/storage/'.$category->{'image:zh-TW'} : '/storage/'.$product->{'image:zh-TW'} }}) center;
+            background: url({{ empty($product->{'image:zh-TW'}) ? '/storage/'.$category->{'image:zh-TW'} : '/storage/'.$product->{'image:zh-TW'} }}) center no-repeat;
         }
     @endforeach
     .product>a>div {
-        width: 236px;
-        height: 236px;
-        background-size: 236px 236px;
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
     }
     .product>a>div>div {
         width: 100%;
@@ -46,10 +41,26 @@
         background: rgba(0, 167, 193, 0.44);
     }
     .product>a:hover>div {
-        background-size: 260px 260px;
+        background-size: 110%;
     }
     .product>a:hover>div>div {
         background: transparent;
+    }
+    @media screen and (max-width: 1199px) {
+        .product-header {
+            margin: 20px 30px 0 30px;
+        }
+        .products {
+            padding: 22px 2.0833vw;
+        }
+        .product {
+            width: 43.75vw;
+            height: 43.75vw;
+            margin: 0 2.0833vw 62px 2.0833vw;
+        }
+        .product h4 {
+            margin: 20px auto;
+        }
     }
 @endsection
 
@@ -148,7 +159,7 @@
 @section('content')
     <div class="fixed-width-1100">
         <h3 class="product-header">
-            {{ __('static.product') }} ＞ {{ $category->{'name:'.App::getLocale()} }}
+            <a href="/product">{{ __('static.product') }}</a> ＞ {{ $category->{'name:'.App::getLocale()} }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#productModal">新增</button>
             @endif

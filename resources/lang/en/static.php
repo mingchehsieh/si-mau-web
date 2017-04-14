@@ -6,7 +6,7 @@ return [
     'home' => 'Home',
     'news' => 'Information',
     'product' => 'Product',
-    'about' => 'About the company',
+    'about' => 'About us',
     'contact_us' => 'Contact us',
     'domestic_calls' => 'For Domestic Calls',
     'international_calls' => 'For International Calls',

@@ -4,7 +4,6 @@
 
 @section('style')
     @parent
-
     .product-header {
         font-size: 20px;
         margin: 28px auto;
@@ -12,16 +11,15 @@
     .product {
         padding: 15px 18px 40px 18px;
         overflow: auto;
-        zoom: 1;
     }
     .product-img {
         margin:0 50px;
+        width: 300px;
         float: left;
     }
     .product-content {
         float: left;
         overflow: auto;
-        zoom: 1;
     }
     .product-content p {
         max-width: 470px;
@@ -30,6 +28,7 @@
         margin-bottom: 32px;
     }
     .active {
+        float: right;
         padding-top: 43px;
     }
     .active img {
@@ -49,6 +48,24 @@
         color: #FFF;
         text-decoration: none;
         background: #008299;
+    }
+    .rwd-p {
+        display: none;
+    }
+    @media screen and (max-width: 1199px) {
+        .product-header {
+            margin: 20px 30px 0 30px;
+        }
+        .product {
+            padding: 15px 30px 0px 30px;
+        }
+        .product-img {
+            width: 59.5833vw;
+            margin:0 auto 28px auto;
+        }
+        .active {
+            padding-top: 7vw;
+        }
     }
 @endsection
 
@@ -147,25 +164,25 @@
 @section('content')
     <div class="fixed-width-1100">
         <h3 class="product-header">
-            {{ __('static.product') }} ＞ {{ $category->{'name:'.App::getLocale()} }} > {{ $product->{'name:'.App::getLocale()} }}
+            <a href="/product">{{ __('static.product') }}</a> ＞ <a href="/product/{{ $category->id }}">{{ $category->{'name:'.App::getLocale()} }}</a> > {{ $product->{'name:'.App::getLocale()} }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#productModal">修改</button>
                 <button type="button" class="id-button-d deletecate"  data-id="{{ $product->id }}" data-name="{{ $product->{'name:zh-TW'} }}">刪除</button>
             @endif
         </h3>
         <div class="product">
-            <img src="{{ '/storage/'.$product->{'image:zh-TW'} }}" height="300px" width="300px" class="product-img">
-            <div class="product-content">
-                <h4>{{ $product->{'name:'.App::getLocale()} }}</h4>
-                <p>
-                    {!! nl2br($product->{'text:'.App::getLocale()}) !!}
-                </p>
-            </div>
+            <img src="{{ '/storage/'.$product->{'image:zh-TW'} }}" class="product-img">
             <div class="active float-right text-center">
                 @unless(empty($product->{'pdf:zh_TW'}))
                     <a href="{{ '/storage/'.$product->{'pdf:zh-TW'} }}"><img src="/images/pdf-icon.png"></a>
                 @endunless
                 <a href="/contact/{{ $product->id.'/'.$product->{'email:zh-TW'} }}" class="product-contact"><img src="/images/product-contact.png">立<br>即<br>詢<br>價</a>
+            </div>
+            <div class="product-content">
+                <h4>{{ $product->{'name:'.App::getLocale()} }}</h4>
+                <p>
+                    {!! nl2br($product->{'text:'.App::getLocale()}) !!}
+                </p>
             </div>
         </div>
     </div>

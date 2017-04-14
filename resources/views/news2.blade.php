@@ -19,8 +19,7 @@
         padding: 1px 80px;
     }
     .news-content img {
-        max-width: 930px
-        float: left;
+        max-width: 930px;
         margin-right: 42px;
     }
     .news-content h2 {
@@ -30,9 +29,34 @@
     }
     .news-content p {
         margin: 30px auto;
-
     }
-
+    .rwd-img {
+        display: none;
+    }
+    @media screen and (max-width: 1199px) {
+        .news-header {
+            font-size: 20px;
+            margin: 20px auto 0 auto;
+        }
+        .news-content {
+            padding: 1px 0;
+        }
+        .news-content img {
+            display: none;
+        }
+        .news-content .rwd-img {
+            display: block;
+            width: 100%;
+            margin: 28px auto;
+        }
+        .news-content h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .news-content p {
+            margin: 22px auto;
+        }
+    }
 @endsection
 
 @if (Auth::check())
@@ -121,13 +145,14 @@
 @section('content')
     <div class="fixed-width-1100">
         <h3 class="news-header">
-            {{ __('static.news') }}
+            <a href="/news">{{ __('static.news') }} </a> ＞ {{ $news->{'title:'.App::getLocale()} }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#newsModal">修改</button>
                 <button type="button" class="id-button-d deletecate"  data-id="{{ $news->id }}" data-name="{{ $news->{'title:zh-TW'} }}">刪除</button>
             @endif
         </h3>
         <div class="news-content">
+            <img class="rwd-img" src="{{ empty($news->{'image:zh-TW'})? '/images/news-default.png' : '/storage/'.$news->{'image:zh-TW'} }}">
             <h2>{{ $news->{'title:'.App::getLocale()} }}</h2>
             <time>{{ $news->updated_at->format('F j, Y') }}</time>
             <p>

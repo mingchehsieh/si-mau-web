@@ -11,18 +11,18 @@
     .about-img {
         margin-right: 30px;
     }
-    .contact {
-
+    .about {
         overflow: auto;
-        zoom: 1;
+    }
+    .about p {
+        padding-top:10px;
+    }
+    .contact {
         padding: 85px 175px;
+        overflow: auto;
     }
     .contact h4 {
         margin-top: 5px;
-    }
-    .about {
-        overflow: auto;
-        zoom: 1;
     }
     .contact-button {
         display: block;
@@ -36,8 +36,32 @@
         text-decoration: none;
         color: #FFF;
     }
-    .about p {
-        padding-top:10px;
+    @media screen and (max-width: 1199px) {
+        .child-fixed-width-1100 {
+            padding: 0;
+        }
+        .about-header {
+            margin: 20px auto 0 30px;
+        }
+        .about-img {
+            margin: 28px 0;
+            width: 100%;
+        }
+        .about p {
+            padding: 0 30px;
+        }
+        .contact {
+            padding: 20px 0;
+            text-align: center;
+        }
+        .contact div {
+            float:none;
+        }
+        .contact-button {
+            margin: 30px auto;
+            width: 200px;
+            height: 60px;
+        }
     }
 @endsection
 

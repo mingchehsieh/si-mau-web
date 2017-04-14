@@ -4,12 +4,6 @@
 
 @section('style')
     @parent
-    a {
-        color: #00A7C1;
-    }
-    a:hover {
-        color: #008299;
-    }
     .news-header {
         font-size: 20px;
         margin: 28px auto;
@@ -21,9 +15,14 @@
         margin-bottom: 22px;
         padding: 1px 82px;
     }
-    .news-content img {
+    .news-img  {
         float: left;
         margin-right: 42px;
+        width: 296px;
+        height: 196px;
+    }
+    .news-img img {
+        height: 100%;
     }
     .news-content h4 {
         padding-top: 5px;
@@ -33,6 +32,34 @@
         margin-top: 10px;
         height: 85px;
         overflow: hidden;
+    }
+    @media screen and (max-width: 1199px) {
+        .news-header {
+            margin: 20px auto 0 auto;
+        }
+        .news-content {
+            margin-bottom: 22px;
+            padding: 1px 0;
+        }
+        .news-img {
+            float: none;
+            margin-right: 0;
+            margin-top: 28px;
+            margin-bottom: 28px;
+            width: 100%;
+            height: 55.4166vw;
+            text-align: center;
+        }
+        .news-img img {
+            width: auto;
+            height: 100%;
+        }
+        .news-content p {
+            margin-top: 15px;
+            height: 95px;
+            overflow: hidden;
+        }
+
     }
 @endsection
 
@@ -138,8 +165,9 @@
         @foreach($newsall as $news)
             <div class="news-content">
                 <a href="/news/{{ $news->id }}">
-                    <img src="{{ empty($news->{'image:zh-TW'})? '/images/news-default.png' : '/storage/'.$news->{'image:zh-TW'} }}" height="197px">
-
+                    <div class="news-img">
+                        <img src="{{ empty($news->{'image:zh-TW'})? '/images/news-default.png' : '/storage/'.$news->{'image:zh-TW'} }}">
+                    </div>
                     <h4>{{ $news->{'title:'.App::getLocale()} }}</h4>
                     <time>{{ $news->updated_at->format('F j, Y') }}</time>
                 </a>

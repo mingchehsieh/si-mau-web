@@ -36,7 +36,6 @@ Route::post('addcategory', function (Request $request) {
 
     if ($request->id == 0) {
         $category = new Category;
-
     } else {
         $category = Category::find($request->id);
     }

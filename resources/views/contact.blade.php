@@ -41,7 +41,40 @@
     .form input[type=submit] {
         margin-left: 165px;
     }
-
+    @media screen and (max-width: 1199px) {
+        .contact-header {
+            margin: 20px auto;
+        }
+        .form {
+            width: 100%;
+            padding-left: 0;
+            text-align:right;
+        }
+        .map {
+            margin-top: 15px;
+            width: 100%;
+        }
+        iframe {
+            width: 100%;
+        }
+        .form input[type=text] {
+            width: 100%;
+        }
+        textarea {
+            width: 100%;
+        }
+        .form input[type=submit] {
+            margin-left: 0;
+        }
+    }
+        @media screen and (max-width: 1199px) and (min-width: 490px) {
+            .form {
+                width: 50%;
+            }
+            .map {
+                width: 50%;
+            }
+        }
 @endsection
 
 @section('content')

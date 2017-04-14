@@ -4,12 +4,6 @@
 
 @section('style')
     @parent
-    a {
-        color: #00A7C1;
-    }
-    a:hover {
-        color: #008299;
-    }
     .product-header {
         font-size: 20px;
         margin: 28px auto;
@@ -17,10 +11,10 @@
     .categories {
         padding: 22px 52px;
         overflow: auto;
-        zoom: 1;
     }
     .category {
         width: 300px;
+        height: 300px;
         margin: 0 15px 20px 15px;
         float: left;
     }
@@ -32,13 +26,13 @@
     }
     @foreach($categories as $category)
         .div{{ $category->id }} {
-            background: url({{ empty($category->{'image:zh-TW'})? '/images/product-default.jpg' : '/storage/'.$category->{'image:zh-TW'} }}) center;
+            background: url({{ empty($category->{'image:zh-TW'})? '/images/product-default.jpg' : '/storage/'.$category->{'image:zh-TW'} }}) center no-repeat;
         }
     @endforeach
     .category>a>div {
-        width: 300px;
-        height: 300px;
-        background-size: 300px 300px;
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
     }
     .category>a>div>div {
         width: 100%;
@@ -46,10 +40,26 @@
         background: rgba(0, 167, 193, 0.44);
     }
     .category>a:hover>div {
-        background-size: 330px 330px;
+        background-size: 110%;
     }
     .category>a:hover>div>div {
         background: transparent;
+    }
+    @media screen and (max-width: 1199px) {
+        .product-header {
+            margin: 20px 30px 0 30px;
+        }
+        .categories {
+            padding: 22px 2.0833vw;
+        }
+        .category {
+            width: 43.75vw;
+            height: 43.75vw;
+            margin: 0 2.0833vw 62px 2.0833vw;
+        }
+        .category h4 {
+            margin: 20px auto;
+        }
     }
 @endsection
 
