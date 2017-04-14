@@ -75,10 +75,13 @@
     }
 
     @media screen and (max-width: 1199px) {
+        body {
+            padding-top: 0;
+        }
         .banner {
-            height: 670px;
-            background: url('/images/slide1.jpg') no-repeat top;
-
+            height: 100vh;
+            background: url('/images/slide1.jpg') no-repeat center 120px;
+            background-size: auto 100%;
         }
         .product-category {
             position: absolute;
@@ -126,8 +129,14 @@
 
     }
     @media screen and (max-width: 1199px) and (min-height: 790px) {
+        body {
+            padding-top: 120px;
+        }
         .banner {
             padding-top: 450px;
+            height: 670px;
+            background: url('/images/slide1.jpg') no-repeat center top;
+            background-size: auto 100%;
         }
         .product-category {
             position: static;
