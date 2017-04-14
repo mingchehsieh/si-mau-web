@@ -14,7 +14,6 @@
     }
     .category {
         width: 300px;
-        height: 300px;
         margin: 0 15px 20px 15px;
         float: left;
     }
@@ -29,9 +28,9 @@
             background: url({{ empty($category->{'image:zh-TW'})? '/images/product-default.jpg' : '/storage/'.$category->{'image:zh-TW'} }}) center no-repeat;
         }
     @endforeach
-    .category>a>div {
-        width: 100%;
-        height: 100%;
+    .category-img {
+        width: 300px;
+        height: 300px;
         background-size: 100%;
     }
     .category>a>div>div {
@@ -54,11 +53,14 @@
         }
         .category {
             width: 43.75vw;
+            margin: 0 2.0833vw 5px 2.0833vw;
+        }
+        .category-img {
+            width: 43.75vw;
             height: 43.75vw;
-            margin: 0 2.0833vw 62px 2.0833vw;
         }
         .category h4 {
-            margin: 20px auto;
+            margin: 15px auto;
         }
     }
 @endsection
@@ -209,7 +211,7 @@
                         @endif
                     @endif
                     <a href="/product/{{ $category->id }}">
-                        <div class="div{{ $category->id }}">
+                        <div class="div{{ $category->id }} category-img">
                             <div>
 
                             </div>
