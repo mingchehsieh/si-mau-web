@@ -222,7 +222,6 @@
                     }
                     .hamburger {
                         display: block;
-                        z-index: 100;
                         width: 30px;
                         margin: 25px 30px 26px auto;
                     }
@@ -314,7 +313,7 @@
                         <button type="submit" class="searchbtn"><img alt="search" src="/images/search.png"></button>
                     </form>
                 </span>
-                <span class="hamburger float-right">
+                <span class="hamburger float-right" onclick="">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
