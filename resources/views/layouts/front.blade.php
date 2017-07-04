@@ -38,8 +38,7 @@
                 }
                 header {
                     height: 50px;
-                    /* background: #434343; */
-                    background: rgba(20, 20, 20, 0.8);
+                    background: #434343;
                     line-height: 50px;
                 }
                 header>div {
@@ -57,7 +56,7 @@
                 }
                 nav {
                     height: 70px;
-                    background: rgba(255, 255, 255, 0.8);
+                    background: #FFF;
                     line-height: 70px;
                 }
                 nav>div {
