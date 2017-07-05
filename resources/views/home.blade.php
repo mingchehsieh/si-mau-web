@@ -24,6 +24,9 @@
             background: #FFF url('{{ empty($categories->where('home_col', $i)->first()->{'image:zh-TW'})? '/images/product-default.jpg' : '/storage/'.$categories->where('home_col', $i)->first()->{'image:zh-TW'} }}') no-repeat center;
         }
     @endfor
+    .category1{
+        -webkit-transition: 0.3s;
+    }
     .product-category a {
         color: #FFF;
     }
@@ -47,51 +50,62 @@
         border-top: 1px solid #FFF;
         padding:10px 6px 0 6px;
     }
+    {{-- 相關企業 --}}
     .related-companies h4{
         margin: 0 auto 37px auto;
     }
-    .related-companies-ul li {
-        width:145px;
-        height:153px;
+    .related-companies li {
         margin-right: 18px;
-        background-size: 100%;
-        font-weight: bold;
-        -webkit-transition: 0.5s;
+        width: 145px;
+        height: 153px;
+        border-radius: 3px;
         overflow: hidden;
+        background-color: #FFF;
     }
-    .related-companies-ul li:hover{
-        -webkit-transform: scale(1.1);
-    }
-    .related-companies1 {
-        background: #FFF url('/images/logo-best.jpg') no-repeat center;
-    }
-    .related-companies2 {
-        background: #FFF url('/images/logo-khl.jpg') no-repeat center;
-    }
-    .related-companies3 {
-        background: #FFF url('/images/logo-woojin.jpg') no-repeat center;
-    }
-    .related-companies4 {
-        background: #FFF url('/images/logo-benq.jpg') no-repeat center;
-    }
-    .related-companies-ul a {
-        color: transparent;
-    }
-    .related-companies-ul li:hover div{
-        background: rgba(255, 255, 255, 0.8);
-    }
-    .related-companies-ul li:hover a {
+	.related-companies a {
+		display: inline-block;
+		position: relative;
         color: #000;
         text-decoration: none;
-    }
-    .related-companies-ul li div {
-        width:100%;
-        height:100%;
-        text-align:center;
-        line-height: 153px
-    }
+        font-size: 16px;
+        font-weight: bold;
+	}
+	.related-companies img {
+        height: 100%;
+		-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+		-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+		-o-transition: opacity 0.3s, -o-transform 0.3s;
+		transition: opacity 0.3s, transform 0.3s;
+	}
+	.related-companies span {
+		display: block;
+		opacity: 0;
+		height: 40px;
+		width: 100%;
+		left: 0;
+		position: absolute;
+		top: 50%;
+		margin-top: -20px;
+		text-align: center;
+		line-height: 40px;
+		font-weight: bold;
+		-webkit-transition: opacity 0.3s;
+		-moz-transition: opacity 0.3s;
+		-o-transition: opacity 0.3s;
+		transition: opacity 0.3s;
+	}
+	.related-companies a:hover img {
+		opacity: 0.3;
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		transform:scale(1.1);
+	}
+	.related-companies a:hover span {
+		opacity: 1;
+	}
 
-    @media screen and (max-width: 1199px) {
+    @media (max-width: 1199px) {
         body {
             padding-top: 0;
         }
@@ -104,12 +118,12 @@
             position: absolute;
             bottom: 8px;
             width: 100%;
-            padding: 0 1.25vw;
+            padding: 0;
         }
         .product-category li {
-            width:31.6666vw;
-            height:31.6666vw;
-            margin:0 0.4166vw;
+            width:31vw;
+            height:31vw;
+            margin:0 0.41vw;
         }
         .product-category li div {
             padding-top: 47.6821%;
@@ -122,16 +136,10 @@
         .related-companies h4{
             margin:30px auto 37px auto;
         }
-        .related-companies-ul li {
-            width: 17.5vw;
+        .related-companies li {
+            max-width: 17.5vw;
             height: 18.3333vw;
             margin:0 0.4166vw;
-        }
-        .related-companies-ul li div {
-            width:100%;
-            height:100%;
-            text-align:center;
-            line-height: 18.3333vw;
         }
         .map {
             clear: both;
@@ -143,9 +151,8 @@
             width: 68.3333%;
             height: auto;
         }
-
     }
-    @media screen and (max-width: 1199px) and (min-height: 790px) {
+    @media (min-height: 790px) and (max-width: 1199px) {
         body {
             padding-top: 120px;
         }
@@ -185,15 +192,15 @@
         <div>
             <span class="float-left related-companies">
                 <h4>{{ __('static.related_companies') }}</h4>
-                <ul class="related-companies-ul">
-                    <li class="related-companies1"><div><a href="http://www.bst.tw/"><div><span class="company-name">貝斯特</span></div></a></div></li>
-                    <li class="related-companies2"><div><a href="http://kimhoanglongco.com/"><div><span class="company-name">金皇龍</span></div></a></div></li>
-                    <li class="related-companies3"><div><a href="http://www.woojincopolymer.co.kr/"><div><span class="company-name">WOOJIN</span></div></a></div></li>
-                    <li class="related-companies4"><div><a href="http://benqabdentcare.com/"><div><span class="company-name">BenQ 牙</span></div></a></div></li>
+                <ul>
+                    <li><a href="http://www.bst.tw/"><img src="/images/logo-best.jpg" alt="貝斯特 Logo"><span>貝斯特</span></a></li>
+                    <li><a href="http://kimhoanglongco.com/"><img src="/images/logo-khl.jpg" alt="金皇龍 Logo"><span>金皇龍</span></a></li>
+                    <li><a href="http://www.woojincopolymer.co.kr/"><img src="/images/logo-woojin.jpg" alt="WOOJIN Logo"><span>WOOJIN</span></a></li>
+                    <li><a href="http://benqabdentcare.com/"><img src="/images/logo-benq.jpg" alt="BenQ 牙材 Logo"><span>BenQ 牙材</span></a></li>
                 </ul>
             </span>
             <span class="float-right map">
-                <a href="https://www.google.com.tw/maps/place/110%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%B0%B8%E5%90%89%E8%B7%AF168%E8%99%9F/@25.0455053,121.5688248,17z/data=!3m1!4b1!4m5!3m4!1s0x3442abbd524cf0a7:0xea7dc23efc68ebfc!8m2!3d25.0455053!4d121.5710135"><img src="/images/home-map.png" height="228px" width="272" alt="Map"></a>
+                <a href="https://www.google.com.tw/maps/place/110%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E6%B0%B8%E5%90%89%E8%B7%AF168%E8%99%9F/@25.0455053,121.5688248,17z/data=!3m1!4b1!4m5!3m4!1s0x3442abbd524cf0a7:0xea7dc23efc68ebfc!8m2!3d25.0455053!4d121.5710135"><img src="/images/home-map.png" height="228px" width="445" alt="Map"></a>
             </span>
         </div>
     </div>
