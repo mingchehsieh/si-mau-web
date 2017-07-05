@@ -189,7 +189,7 @@
                     <li class="related-companies1"><div><a href="http://www.bst.tw/"><div><span class="company-name">貝斯特</span></div></a></div></li>
                     <li class="related-companies2"><div><a href="http://kimhoanglongco.com/"><div><span class="company-name">金皇龍</span></div></a></div></li>
                     <li class="related-companies3"><div><a href="http://www.woojincopolymer.co.kr/"><div><span class="company-name">WOOJIN</span></div></a></div></li>
-                    <li class="related-companies4"><div><a href="http://benqabdentcare.com/"><div><span class="company-name">BenQ 牙材</span></div></a></div></li>
+                    <li class="related-companies4"><div><a href="http://benqabdentcare.com/"><div><span class="company-name">BenQ 牙</span></div></a></div></li>
                 </ul>
             </span>
             <span class="float-right map">
