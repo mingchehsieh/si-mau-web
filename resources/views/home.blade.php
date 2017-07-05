@@ -51,11 +51,22 @@
         margin: 0 auto 37px auto;
     }
     .related-companies-ul li {
-        width:146px;
+        width:145px;
         height:153px;
         margin-right: 18px;
-        background: #FFF url('/images/related_companies.jpg') no-repeat center;
         background-size: 100%;
+    }
+    .related-companies1 {
+        background: #FFF url('/images/logo-best.jpg') no-repeat center;
+    }
+    .related-companies2 {
+        background: #FFF url('/images/logo-khl.jpg') no-repeat center;
+    }
+    .related-companies3 {
+        background: #FFF url('/images/logo-woojin.jpg') no-repeat center;
+    }
+    .related-companies4 {
+        background: #FFF url('/images/logo-benq.jpg') no-repeat center;
     }
     .related-companies-ul a {
         color: transparent;
@@ -169,11 +180,10 @@
             <span class="float-left related-companies">
                 <h4>{{ __('static.related_companies') }}</h4>
                 <ul class="related-companies-ul">
-                    <li><a href="#"><div><span class="company-name">相關企業名稱</span></div></a></li>
-                    <li><a href="#"><div><span class="company-name">相關企業名稱</span></div></a></li>
-                    <li><a href="#"><div><span class="company-name">相關企業名稱</span></div></a></li>
-                    <li><a href="#"><div><span class="company-name">相關企業名稱</span></div></a></li>
-                    <li><a href="#"><div><span class="company-name">相關企業名稱</span></div></a></li>
+                    <li class="related-companies1"><a href="http://www.bst.tw/"><div><span class="company-name">貝斯特</span></div></a></li>
+                    <li class="related-companies2"><a href="http://kimhoanglongco.com/"><div><span class="company-name">金皇龍</span></div></a></li>
+                    <li class="related-companies3"><a href="http://www.woojincopolymer.co.kr/"><div><span class="company-name">WOOJIN</span></div></a></li>
+                    <li class="related-companies4"><a href="http://benqabdentcare.com/"><div><span class="company-name">BenQ 牙材</span></div></a></li>
                 </ul>
             </span>
             <span class="float-right map">
