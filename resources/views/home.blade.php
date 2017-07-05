@@ -57,20 +57,21 @@
         background-size: 100%;
         font-weight: bold;
         -webkit-transition: 0.5s;
+        overflow: hidden;
     }
     .related-companies-ul li:hover{
         -webkit-transform: scale(1.1);
     }
-    .related-companies1 {
+    .related-companies1>div {
         background: #FFF url('/images/logo-best.jpg') no-repeat center;
     }
-    .related-companies2 {
+    .related-companies2>div {
         background: #FFF url('/images/logo-khl.jpg') no-repeat center;
     }
-    .related-companies3 {
+    .related-companies3>div {
         background: #FFF url('/images/logo-woojin.jpg') no-repeat center;
     }
-    .related-companies4 {
+    .related-companies4>div {
         background: #FFF url('/images/logo-benq.jpg') no-repeat center;
     }
     .related-companies-ul a {
@@ -185,10 +186,10 @@
             <span class="float-left related-companies">
                 <h4>{{ __('static.related_companies') }}</h4>
                 <ul class="related-companies-ul">
-                    <li class="related-companies1"><a href="http://www.bst.tw/"><div><span class="company-name">貝斯特</span></div></a></li>
-                    <li class="related-companies2"><a href="http://kimhoanglongco.com/"><div><span class="company-name">金皇龍</span></div></a></li>
-                    <li class="related-companies3"><a href="http://www.woojincopolymer.co.kr/"><div><span class="company-name">WOOJIN</span></div></a></li>
-                    <li class="related-companies4"><a href="http://benqabdentcare.com/"><div><span class="company-name">BenQ 牙材</span></div></a></li>
+                    <li class="related-companies1"><div><a href="http://www.bst.tw/"><div><span class="company-name">貝斯特</span></div></a></div></li>
+                    <li class="related-companies2"><div><a href="http://kimhoanglongco.com/"><div><span class="company-name">金皇龍</span></div></a></div></li>
+                    <li class="related-companies3"><div><a href="http://www.woojincopolymer.co.kr/"><div><span class="company-name">WOOJIN</span></div></a></div></li>
+                    <li class="related-companies4"><div><a href="http://benqabdentcare.com/"><div><span class="company-name">BenQ 牙材</span></div></a></div></li>
                 </ul>
             </span>
             <span class="float-right map">
