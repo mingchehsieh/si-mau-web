@@ -62,16 +62,16 @@
     .related-companies-ul li:hover{
         -webkit-transform: scale(1.1);
     }
-    .related-companies1>div {
+    .related-companies1 {
         background: #FFF url('/images/logo-best.jpg') no-repeat center;
     }
-    .related-companies2>div {
+    .related-companies2 {
         background: #FFF url('/images/logo-khl.jpg') no-repeat center;
     }
-    .related-companies3>div {
+    .related-companies3 {
         background: #FFF url('/images/logo-woojin.jpg') no-repeat center;
     }
-    .related-companies4>div {
+    .related-companies4 {
         background: #FFF url('/images/logo-benq.jpg') no-repeat center;
     }
     .related-companies-ul a {
