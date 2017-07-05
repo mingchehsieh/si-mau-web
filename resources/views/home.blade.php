@@ -55,6 +55,11 @@
         height:153px;
         margin-right: 18px;
         background-size: 100%;
+        font-weight: bold;
+        -webkit-transition: 0.5s;
+    }
+    .related-companies-ul li:hover{
+        -webkit-transform: scale(1.1);
     }
     .related-companies1 {
         background: #FFF url('/images/logo-best.jpg') no-repeat center;
