@@ -1,9 +1,9 @@
 ;(function($){
 
-	var num = 1; //number of pixels before modifying styles
+	var num = 150; //number of pixels before modifying styles
 
 	$(window).bind('scroll', function () {
-	    if ($(window).scrollTop() > 50) {
+	    if ($(window).scrollTop() > num) {
 	        $('.header-fixed').css("top", "-50px");
 	    } else {
 			$('.header-fixed').css("top", "0");
