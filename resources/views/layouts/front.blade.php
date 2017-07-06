@@ -367,6 +367,9 @@
                 {{ __('static.open') }}<br>
                 {{ __('static.closed') }}
             </div>
+            <div class="float-left qrcode">
+                <img src="/images/qrcode.png" alt="QR Code">
+            </div>
         </div>
         <div class="copyright">© 2017 世茂科技股份有限公司 All Rights Reserved.</div>
     </footer>
