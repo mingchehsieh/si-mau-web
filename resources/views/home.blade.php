@@ -32,6 +32,9 @@
         background-color: #00A7C1;
         color: #FFF;
         font-weight: bold;
+        -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+        box-shadow: 0 1px 5px rgba(0,0,0,0.25);
 	}
 	.product-category img {
         opacity: 0.56;

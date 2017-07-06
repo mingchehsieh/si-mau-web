@@ -61,6 +61,9 @@
                 height: 70px;
                 background: #FFF;
                 line-height: 70px;
+                -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+                -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+                box-shadow: 0 1px 5px rgba(0,0,0,0.25);
             }
             nav>div {
                 overflow: auto;
