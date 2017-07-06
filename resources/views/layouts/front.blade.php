@@ -92,6 +92,10 @@
                 position: fixed;
                 top: 0;
                 z-index: 5;
+		-webkit-transition: 0.3s;
+		-moz-transition: 0.3s;
+		-o-transition: 0.3s;
+		transition: 0.3s;
             }
             .float-left {
                 float:left;
@@ -374,6 +378,7 @@
         <div class="copyright">© 2017 世茂科技股份有限公司 All Rights Reserved.</div>
     </footer>
     <script src ="/js/app.js"></script>
+    <script src ="/js/header.js"></script>
     @yield('js')
 </body>
 </html>
