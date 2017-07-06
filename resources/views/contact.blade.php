@@ -8,7 +8,6 @@
         padding: 0 30px 36px 30px;
     }
     .contact-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .form {
@@ -79,7 +78,7 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="contact-header">{{ __('static.contact_us') }}</h3>
+        <h5 class="contact-header">{{ __('static.contact_us') }}</h5>
         <div class="form">
             <form>
                 <input type="text" name="name" placeholder="{{ __('static.contact_name') }}" Required>

@@ -5,7 +5,6 @@
 @section('style')
     @parent
     .news-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .content {
@@ -156,12 +155,12 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="news-header">
+        <h5 class="news-header">
             {{ __('static.news') }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#newsModal" data-action="新增" data-col="0" data-id="0">新增</button>
             @endif
-        </h3>
+        </h5>
         @foreach($newsall as $news)
             <div class="news-content">
                 <a href="/news/{{ $news->id }}">

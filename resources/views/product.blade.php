@@ -5,7 +5,6 @@
 @section('style')
     @parent
     .product-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .categories {
@@ -195,12 +194,12 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="product-header">
+        <h5 class="product-header">
             {{ __('static.product') }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#categoryModal" data-action="新增" data-col="0" data-id="0">新增</button>
             @endif
-        </h3>
+        </h5>
         <div class="categories">
             @foreach($categories as $category)
                 <div class="category text-center">

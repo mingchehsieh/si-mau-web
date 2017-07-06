@@ -5,7 +5,6 @@
 @section('style')
     @parent
     .about-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .about-img {
@@ -37,7 +36,7 @@
         color: #FFF;
     }
     @media screen and (max-width: 1199px) {
-        .child-fixed-width-1100 {
+        .content .child-fixed-width-1100 {
             padding: 0;
         }
         .about-header {
@@ -68,7 +67,7 @@
 @section('content')
     <div class="child-fixed-width-1100">
         <div>
-            <h3 class="about-header">{{ __('static.about') }}</h3>
+            <h5 class="about-header">{{ __('static.about') }}</h5>
             <div class="about">
                 <img src="/images/about.jpg" alt="Office" class="float-left about-img">
                 <p>{!! __('static.about_text') !!}</p>

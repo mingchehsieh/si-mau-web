@@ -5,7 +5,6 @@
 @section('style')
     @parent
     .product-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .products {
@@ -79,9 +78,9 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="product-header">
+        <h5 class="product-header">
             {{ __('static.product').' ＞ '.__('static.search').'：'.$key }}
-        </h3>
+        </h5>
         <div class="products">
             @foreach($products as $product)
                 <div class="product text-center">

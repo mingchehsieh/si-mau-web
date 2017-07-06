@@ -5,7 +5,6 @@
 @section('style')
     @parent
     .product-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .products {
@@ -159,12 +158,12 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="product-header">
+        <h5 class="product-header">
             <a href="/product">{{ __('static.product') }}</a> ＞ {{ $category->{'name:'.App::getLocale()} }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#productModal">新增</button>
             @endif
-        </h3>
+        </h5>
         <div class="products">
             @foreach($products as $product)
                 <div class="product text-center">

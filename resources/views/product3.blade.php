@@ -5,7 +5,6 @@
 @section('style')
     @parent
     .product-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .product {
@@ -163,13 +162,13 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="product-header">
+        <h5 class="product-header">
             <a href="/product">{{ __('static.product') }}</a> ＞ <a href="/product/{{ $category->id }}">{{ $category->{'name:'.App::getLocale()} }}</a> > {{ $product->{'name:'.App::getLocale()} }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#productModal">修改</button>
                 <button type="button" class="id-button-d deletecate"  data-id="{{ $product->id }}" data-name="{{ $product->{'name:zh-TW'} }}">刪除</button>
             @endif
-        </h3>
+        </h5>
         <div class="product">
             <img src="{{ '/storage/'.$product->{'image:zh-TW'} }}" class="product-img">
             <div class="active float-right text-center">

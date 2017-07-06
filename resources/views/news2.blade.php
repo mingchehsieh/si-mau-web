@@ -8,7 +8,6 @@
         color: #00A7C1;
     }
     .news-header {
-        font-size: 20px;
         margin: 28px auto;
     }
     .content {
@@ -35,7 +34,6 @@
     }
     @media screen and (max-width: 1199px) {
         .news-header {
-            font-size: 20px;
             margin: 20px auto 0 auto;
         }
         .news-content {
@@ -144,13 +142,13 @@
 
 @section('content')
     <div class="fixed-width-1100">
-        <h3 class="news-header">
+        <h5 class="news-header">
             <a href="/news">{{ __('static.news') }} </a> ＞ {{ $news->{'title:'.App::getLocale()} }}
             @if (Auth::check())
                 <button type="button" class="id-button-p" data-toggle="modal" data-target="#newsModal">修改</button>
                 <button type="button" class="id-button-d deletecate"  data-id="{{ $news->id }}" data-name="{{ $news->{'title:zh-TW'} }}">刪除</button>
             @endif
-        </h3>
+        </h5>
         <div class="news-content">
             <img class="rwd-img" src="{{ empty($news->{'image:zh-TW'})? '/images/news-default.png' : '/storage/'.$news->{'image:zh-TW'} }}">
             <h2>{{ $news->{'title:'.App::getLocale()} }}</h2>

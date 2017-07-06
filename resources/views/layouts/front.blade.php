@@ -124,13 +124,13 @@
                 text-align: right;
             }
             .id-button-p,
-            .id-button-d,
-            .id-button-w {
+            .id-button-d {
                 display: inline-block;
                 border: 0;
                 padding: 0 50px;
                 width: auto;
                 height: 40px;
+                border-radius: 3px;
                 line-height: 40px;
                 font-size: 17px;
                 margin-left: 0;
@@ -138,9 +138,9 @@
                 color: #FFF;
             }
             .id-button-p:hover,
-            .id-button-p:hover,
-            .id-button-p:hover {
+            .id-button-d:hover {
                 text-decoration: none;
+                color: #FFF;
             }
             .id-button-p {
                 background: #00A7C1;
