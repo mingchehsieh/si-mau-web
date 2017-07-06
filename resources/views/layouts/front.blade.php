@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/app.css">
     <style>
         @section('style')
+            *
             body {
                 padding-top: 120px;
                 background: #FFF;
@@ -115,6 +116,7 @@
             }
             .copyright {
                 padding-top: 60px;
+                padding-bottom: 20px;
                 text-align: right;
             }
             .id-button-p,
@@ -282,17 +284,17 @@
                 <span class="float-left header-tel">
                     {{ __('static.header_tel') }}
                 </span>
-                <span class="float-right header-lang">
+                <span class="float-right header-lang" onclick="">
                     <ul class="lang">
                         <li>
                             @if (App::getLocale() === 'zh-TW')
-                                [ 繁 ]
+                                繁
                             @elseif (App::getLocale() === 'zh-CN')
-                                [ 简 ]
+                                简
                             @elseif (App::getLocale() === 'ja')
-                                [ 日文 ]
+                                日文
                             @else
-                                [ English ]
+                                English
                             @endif
                         </li>
                         @unless (App::getLocale() === 'zh-TW')
