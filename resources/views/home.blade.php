@@ -5,7 +5,7 @@
 @section('style')
     @parent
     .banner {
-        background: url('/images/slide2.jpg') no-repeat top;
+        background: url('/images/slide3.jpg') no-repeat top;
         padding-top: 309px;
         padding-bottom: 30px;
     }
@@ -148,7 +148,7 @@
         .banner {
             padding-top: 450px;
             padding-bottom: 20px;
-            background: url('/images/slide1.jpg') no-repeat center top;
+            background: url('/images/slide4.jpg') no-repeat center top;
             background-size: auto 100%;
         }
         .product-category {
@@ -187,7 +187,7 @@
             padding-bottom: 20px;
             padding-left: 10px;
             padding-right: 10px;
-            background: url('/images/slide1.jpg') no-repeat center top;
+            background: url('/images/slide4.jpg') no-repeat center top;
             background-size: auto 100%;
         }
         .product-category {
