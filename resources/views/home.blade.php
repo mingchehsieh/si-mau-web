@@ -102,6 +102,9 @@
         background-color: #FFF;
         color: #000;
         font-weight: bold;
+        -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+        box-shadow: 0 1px 5px rgba(0,0,0,0.25);
 	}
 	.related-companies img {
 		-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
