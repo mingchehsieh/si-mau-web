@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="/css/app.css">
     <style>
         @section('style')
-            *
+            
             body {
                 padding-top: 120px;
                 background: #FFF;
                 letter-spacing: 1px;
+                font-family: "Microsoft JhengHei";
             }
             ul {
                 list-style-type: none;
