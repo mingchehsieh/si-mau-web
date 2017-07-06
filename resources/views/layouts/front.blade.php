@@ -372,19 +372,8 @@
             </div>
         </div>
         <div class="copyright">© 2017 世茂科技股份有限公司 All Rights Reserved.</div>
-        <div id="app">@{{ mess }}</div>
-        
     </footer>
     <script src ="/js/app.js"></script>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                mess: 'hello'
-            }
-        })
-    </script>
-    <script src="/js/header.js"></script>
     @yield('js')
 </body>
 </html>
