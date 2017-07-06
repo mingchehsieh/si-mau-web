@@ -139,7 +139,7 @@
 		opacity: 1;
 	}
     .map iframe {
-        border: 0;
+        border: 1px solid #CCC;
         width: 445px;
         height: 228px;
     }
