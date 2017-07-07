@@ -206,9 +206,6 @@
                     display: block;
                     background: transparent;
                 }
-                .lang:hover li {
-                    display: block;
-                }
                 .lang li a {
                     display: inline;
                 }
@@ -246,8 +243,7 @@
                 }
                 .hamburger {
                     display: block;
-                    width: 30px;
-                    margin: 25px 30px 26px auto;
+                    padding: 26px 30px 26px 0;
                 }
                 .icon-bar {
                     background: #959595;
@@ -256,13 +252,6 @@
                     margin: 0 auto 3px;
                     width: 30px;
                 }
-                .hamburger:hover+.menu-s {
-                    display: block;
-                }
-                .menu-s:hover {
-                    display: block;
-                }
-
                 .search {
                     display: none;
 
@@ -337,7 +326,7 @@
                         <button type="submit" class="searchbtn"><img alt="search" src="/images/search.png"></button>
                     </form>
                 </span>
-                <span class="hamburger float-right" onclick="">
+                <span class="hamburger float-right">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -379,6 +368,18 @@
     </footer>
     <script src ="/js/app.js"></script>
     <script src ="/js/header.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hamburger').on('click', function(e) {
+                e.preventDefault();
+                $('.menu-s').toggle();
+            });
+            $('.lang li:first-child').on('click', function(e) {
+                e.preventDefault();
+                $('.lang li:not(li:first-child)').toggle();
+            });
+        });
+    </script>
     @yield('js')
 </body>
 </html>
