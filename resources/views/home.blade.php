@@ -5,10 +5,18 @@
 @section('style')
     @parent
     .banner {
-        background: url('/images/banner.jpg') no-repeat top 30% center;
-        background-size: 100% auto;
         padding-top: 309px;
         padding-bottom: 30px;
+    }
+    .banner:before {
+        content: "";
+        position: absolute;
+        top: 120px;
+        left: 0;
+        width: 100%;
+        height:400px;
+        background: url('/images/banner.jpg') no-repeat top 30% center;
+        background-size: 100% auto;
     }
     .product-category {
         width: 1170px;
