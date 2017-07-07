@@ -8,15 +8,17 @@
         padding-top: 309px;
         padding-bottom: 30px;
     }
-    .banner:before {
-        content: "";
-        position: absolute;
-        top: 120px;
-        left: 0;
-        width: 100%;
-        height:400px;
-        background: url('/images/banner.jpg') no-repeat top 30% center;
-        background-size: 100% auto;
+    @media (min-width: 1200px){
+        .banner:before {
+            content: "";
+            position: absolute;
+            top: 120px;
+            left: 0;
+            width: 100%;
+            height:400px;
+            background: url('/images/banner.jpg') no-repeat top 30% center;
+            background-size: 100% auto;
+        }
     }
     .product-category {
         width: 1170px;
@@ -157,7 +159,7 @@
         .banner {
             padding-top: 450px;
             padding-bottom: 20px;
-            background: url('/images/slide4.jpg') no-repeat center top;
+            background: url('/images/banner.jpg') no-repeat center;
             background-size: auto 100%;
         }
         .product-category {
@@ -196,7 +198,7 @@
             padding-bottom: 20px;
             padding-left: 10px;
             padding-right: 10px;
-            background: url('/images/slide4.jpg') no-repeat center top;
+            background: url('/images/banner.jpg') no-repeat center;
             background-size: auto 100%;
         }
         .product-category {
