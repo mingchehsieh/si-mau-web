@@ -5,7 +5,8 @@
 @section('style')
     @parent
     .banner {
-        background: url('/images/slide3.jpg') no-repeat top;
+        background: url('/images/banner.jpg') no-repeat top 30% center;
+        background-size: 100% auto;
         padding-top: 309px;
         padding-bottom: 30px;
     }
